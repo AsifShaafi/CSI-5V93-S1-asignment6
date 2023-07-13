@@ -1,0 +1,167 @@
+body {
+  color: #777;
+  margin: 0;
+}
+
+label {
+  padding-top: 12px;
+}
+
+#tab_bar {
+  height: 50px;
+  display: flex;
+  width: 22em;
+  padding: 10px;
+  /* flex-direction: row; */
+  /* vertical-align: bottom; */
+  justify-content: space-around;
+  /* align-items: center; */
+  background-color: #eee;
+}
+
+#tab_bar button {
+  padding: 10px;
+  margin: auto 10px;
+}
+
+.container {
+    color: #333;
+    /* text-align: center; */
+    /* width: 900; */
+    margin: 10 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em 1em;
+  }
+
+#content_dialer, #content_list, #content_add {
+  width: 22em;
+  padding: 10px;
+  background-color: #eee;
+  align-self: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+  .header h1 {
+    margin: 0.2em 0;
+    font-size: 3em;
+    font-weight: 300;
+  }
+
+  .header h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+  }
+
+  button {
+    margin: 0 0 20px 0;
+    background-color: #eee;
+  }
+
+.pure-button-active {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 12px;
+}
+
+.row {
+  margin: 0 auto;
+  clear: both;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.botrow {
+  padding-top: 12px;
+  clear: both;
+  align-items: center;
+  font-family: 'Fira Sans', sans-serif;
+  /* move the items to center and far from each other */
+  justify-content: space-between;
+}
+
+.digit,
+.dig {
+  float: left;
+  padding: 10px 30px;
+  /* width: 30px; */
+  font-size: 2rem;
+  cursor: pointer;
+  border: 0px solid #e6e6e6;
+}
+
+#output {
+  font-family: "Exo";
+  font-size: 2rem;
+  height: 60px;
+  font-weight: bold;
+  color: #1976d2;
+  text-align: center;
+}
+
+.digit:active,
+.dig:active {
+  background-color: #e6e6e6;
+  border-radius: 50%;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65);
+  /* this is a green */
+  text-align: justify;
+}
+
+.button-error {
+  background: rgb(202, 60, 60);
+  /* this is a maroon */
+  text-align: justify;
+}
+
+.dig {
+  padding: 20px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.contact-form-button {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.contact-names {
+  padding: 10px;
+  margin: 5px 5px;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+#contact-list-table{
+  padding-bottom: 20px;
+}
