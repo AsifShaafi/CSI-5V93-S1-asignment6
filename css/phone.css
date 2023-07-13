@@ -9,12 +9,12 @@ label {
 
 #tab_bar {
   height: 50px;
-  display: flex;
-  width: 22em;
+  display: inline-flex;
+  width: 100%;
   padding: 10px;
   /* flex-direction: row; */
   /* vertical-align: bottom; */
-  justify-content: space-around;
+  justify-content: center;
   /* align-items: center; */
   background-color: #eee;
 }
@@ -25,9 +25,7 @@ label {
 }
 
 .container {
-    color: #333;
     /* text-align: center; */
-    /* width: 900; */
     margin: 10 auto;
     align-items: center;
     justify-content: center;
@@ -37,9 +35,8 @@ label {
   }
 
 #content_dialer, #content_list, #content_add {
-  width: 22em;
+  width: 100%;
   padding: 10px;
-  background-color: #eee;
   align-self: center;
   align-items: center;
   display: flex;
@@ -89,17 +86,27 @@ label {
   align-items: center;
   font-family: 'Fira Sans', sans-serif;
   /* move the items to center and far from each other */
-  justify-content: space-between;
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
 }
 
 .digit,
 .dig {
   float: left;
   padding: 10px 30px;
-  /* width: 30px; */
   font-size: 2rem;
   cursor: pointer;
   border: 0px solid #e6e6e6;
+  background-color: white;
+  color: #000000;
+  margin: 10px;
+}
+
+.digit:active,
+.dig:active {
+  background-color: #e6e6e6;
+  border-radius: 50%;
 }
 
 #output {
@@ -109,12 +116,6 @@ label {
   font-weight: bold;
   color: #1976d2;
   text-align: center;
-}
-
-.digit:active,
-.dig:active {
-  background-color: #e6e6e6;
-  border-radius: 50%;
 }
 
 .button-success,
@@ -141,7 +142,7 @@ label {
 .dig {
   padding: 20px 20px;
   margin: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .contact-form-button {
@@ -156,14 +157,19 @@ label {
   padding: 10px;
   margin: 5px 5px;
   cursor: pointer;
-  width: 150px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #a7a7a7;
   border-radius: 10px;
+  color: #ffffff;
 }
 
 #contact-list-table{
   padding-bottom: 20px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #contact_output_text {

@@ -1,10 +1,10 @@
-$(document).ready(function(){
+$(document).ready(function () {
   $('#content_dialer').show();
   $('#content_list').hide();
   $('#content_add').hide();
 });
 
-$('#dial_bar').click(function(){
+$('#dial_bar').click(function () {
   $('#content_dialer').show();
   $('#content_list').hide();
   $('#content_add').hide();
@@ -15,7 +15,6 @@ $('#dial_bar').click(function(){
   $('#add_contact_bar').css('background-color', 'white');
 });
 
-
 $('#contact_bar').click(function () {
   $('#content_dialer').hide();
   $('#content_list').show();
@@ -25,7 +24,6 @@ $('#contact_bar').click(function () {
   $('#dial_bar').css('background-color', 'white');
   $('#add_contact_bar').css('background-color', 'white');
 });
-
 
 $('#add_contact_bar').click(function () {
   $('#content_dialer').hide();
@@ -46,13 +44,11 @@ $('.digit').on('click', function () {
   if (count < 11) {
     count++;
     $('#contact_output_text').val(lastVal + num.trim());
-
   }
 });
 
 $('.clear-button').on('click', function () {
   count = 0;
-  let lastVal = $('#contact_output_text').val();
   $('#contact_output_text').val('');
 });
 
@@ -70,5 +66,10 @@ $('#contact-form-clear-button').on('click', function () {
 });
 
 $('#dial-button').on('click', function () {
-  alert('Calling ' + $('#contact_output_text').val() + '...');
+  let lastVal = $('#contact_output_text').val();
+  if (lastVal.length <= 0) {
+    alert('Please enter a phone number!');
+  } else {
+    alert('Calling ' + lastVal + '...');
+  }
 });
