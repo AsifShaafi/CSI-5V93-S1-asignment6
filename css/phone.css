@@ -165,3 +165,8 @@ label {
 #contact-list-table{
   padding-bottom: 20px;
 }
+
+#contact_output_text {
+  border: 0px solid;
+  text-align: center;
+}

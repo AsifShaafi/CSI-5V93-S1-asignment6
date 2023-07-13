@@ -41,16 +41,19 @@ var count = 0;
 
 $('.digit').on('click', function () {
   var num = $(this).clone().children().remove().end().text();
+  let lastVal = $('#contact_output_text').val();
+  console.log(lastVal);
   if (count < 11) {
-    $('#output').append('<span>' + num.trim() + '</span>');
-
     count++;
+    $('#contact_output_text').val(lastVal + num.trim());
+
   }
 });
 
 $('.clear-button').on('click', function () {
-  $('#output span:last-child').remove();
-  count--;
+  count = 0;
+  let lastVal = $('#contact_output_text').val();
+  $('#contact_output_text').val('');
 });
 
 // $('#contact-form-submit-button').on('click', function () {
@@ -64,4 +67,8 @@ $('#contact-form-clear-button').on('click', function () {
   $('#name').val('');
   $('#email').val('');
   $('#phone').val('');
+});
+
+$('#dial-button').on('click', function () {
+  alert('Calling ' + $('#contact_output_text').val() + '...');
 });
