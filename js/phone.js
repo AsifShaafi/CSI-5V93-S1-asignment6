@@ -94,10 +94,30 @@ $('#dial-button').on('click', function () {
 });
 
 // Gesture Recognition in the gesture_area div
-$('#gesture_area').mousedown(function () {
+
+// Handling the mouse swipes
+downX = 0;
+downY = 0;
+
+$('#gesture_area').mousedown(function (e) {
+  downX = e.pageX;
+  downY = e.pageY;
   $('#gesture_output').val('Mouse Down');
 });
 
-$('#gesture_area').mouseup(function () {
-  $('#gesture_output').val('Mouse Up');
+$('#gesture_area').mouseup(function (e) {
+  upX = e.pageX;
+  upY = e.pageY;
+
+  output = '';
+
+  if (upX < downX) {
+    output = 'Swipe Left';
+  } else if (upX > downX) {
+    output = 'Swipe Right';
+  } else if (upX == downX) {
+    output = 'Mouse Up';
+  }
+
+  $('#gesture_output').val(output);
 });
