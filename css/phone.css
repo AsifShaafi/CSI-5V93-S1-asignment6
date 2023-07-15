@@ -25,16 +25,18 @@ label {
 }
 
 .container {
-    /* text-align: center; */
-    margin: 10 auto;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding: 2.5em 1em;
-  }
+  /* text-align: center; */
+  margin: 10 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em 1em;
+}
 
-#content_dialer, #content_list, #content_add {
+#content_dialer,
+#content_list,
+#content_add {
   width: 100%;
   padding: 10px;
   align-self: center;
@@ -44,29 +46,29 @@ label {
   justify-content: center;
 }
 
-  .header h1 {
-    margin: 0.2em 0;
-    font-size: 3em;
-    font-weight: 300;
-  }
+.header h1 {
+  margin: 0.2em 0;
+  font-size: 3em;
+  font-weight: 300;
+}
 
-  .header h2 {
-    font-weight: 300;
-    color: #ccc;
-    padding: 0;
-    margin-top: 0;
-  }
+.header h2 {
+  font-weight: 300;
+  color: #ccc;
+  padding: 0;
+  margin-top: 0;
+}
 
-  .content-subhead {
-    margin: 50px 0 20px 0;
-    font-weight: 300;
-    color: #888;
-  }
+.content-subhead {
+  margin: 50px 0 20px 0;
+  font-weight: 300;
+  color: #888;
+}
 
-  button {
-    margin: 0 0 20px 0;
-    background-color: #eee;
-  }
+button {
+  margin: 0 0 20px 0;
+  background-color: #eee;
+}
 
 .pure-button-active {
   background-color: #ffffff;
@@ -110,7 +112,7 @@ label {
 }
 
 #output {
-  font-family: "Exo";
+  font-family: 'Exo';
   font-size: 2rem;
   height: 60px;
   font-weight: bold;
@@ -163,7 +165,7 @@ label {
   color: #ffffff;
 }
 
-#contact-list-table{
+#contact-list-table {
   padding-bottom: 20px;
   width: 50%;
   margin: 0 auto;
@@ -174,5 +176,33 @@ label {
 
 #contact_output_text {
   border: 0px solid;
+  text-align: center;
+}
+
+#test_gesture {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 10px;
+}
+
+#gesture_output_div {
+  display: flex;
+}
+
+#gesture_output {
+  border: .5px solid;
+  padding: 10px;
+  height: 55px;
+  text-align: center;
+  border-radius: 10px;
+  color: black;
+}
+
+#gesture_area {
+  width: 300px;
+  height: 300px;
+  background-color: silver;
+  border: 1px solid;
   text-align: center;
 }
