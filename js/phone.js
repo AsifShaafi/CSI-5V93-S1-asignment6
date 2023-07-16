@@ -5,54 +5,53 @@ $(document).ready(function () {
   $('#test_gesture').hide();
 });
 
-$('#dial_bar').click(function () {
-  $('#content_dialer').show();
+currentTabIndex = 0;
+tabIds = ['dial_bar', 'contact_bar', 'add_contact_bar', 'gesture_bar'];
+
+function selectTab(buttonId) {
+  console.log('selectTab(' + buttonId + ')');
+
+  // hide all tabs
+  $('#content_dialer').hide();
   $('#content_list').hide();
   $('#content_add').hide();
   $('#test_gesture').hide();
 
-  // change color of clicked button and reset others
-  $(this).css('background-color', '#e6e6e6');
-  $('#contact_bar').css('background-color', 'white');
-  $('#add_contact_bar').css('background-color', 'white');
-  $('#gesture_bar').css('background-color', 'white');
-});
+  if (buttonId == 'dial_bar') {
+    $('#content_dialer').show();
+  } else if (buttonId == 'contact_bar') {
+    $('#content_list').show();
+  } else if (buttonId == 'add_contact_bar') {
+    $('#content_add').show();
+  } else if (buttonId == 'gesture_bar') {
+    $('#test_gesture').show();
+  }
 
-$('#contact_bar').click(function () {
-  $('#content_dialer').hide();
-  $('#content_list').show();
-  $('#content_add').hide();
-  $('#test_gesture').hide();
   // change color of clicked button and reset others
-  $(this).css('background-color', '#e6e6e6');
-  $('#dial_bar').css('background-color', 'white');
-  $('#gesture_bar').css('background-color', 'white');
-  $('#add_contact_bar').css('background-color', 'white');
-});
+  $('#' + buttonId).css('background-color', '#e6e6e6');
+  for (i = 0; i < tabIds.length; i++) {
+    if (tabIds[i] != buttonId) {
+      $('#' + tabIds[i]).css('background-color', 'white');
+    }
+  }
 
-$('#add_contact_bar').click(function () {
-  $('#content_dialer').hide();
-  $('#content_list').hide();
-  $('#content_add').show();
-  $('#test_gesture').hide();
-  // change color of clicked button and reset others
-  $(this).css('background-color', '#e6e6e6');
-  $('#dial_bar').css('background-color', 'white');
-  $('#gesture_bar').css('background-color', 'white');
-  $('#contact_bar').css('background-color', 'white');
-});
+  // update currentTabIndex
+  for (i = 0; i < tabIds.length; i++) {
+    if (tabIds[i] == buttonId) {
+      currentTabIndex = i;
+    }
+  }
 
-$('#gesture_bar').click(function () {
-  $('#test_gesture').show();
-  $('#content_dialer').hide();
-  $('#content_list').hide();
-  $('#content_add').hide();
-  // change color of clicked button and reset others
-  $(this).css('background-color', '#e6e6e6');
-  $('#dial_bar').css('background-color', 'white');
-  $('#contact_bar').css('background-color', 'white');
-  $('#add_contact_bar').css('background-color', 'white');
-});
+  console.log('currentTabIndex = ' + currentTabIndex);
+}
+
+$('#dial_bar').click(() => selectTab(tabIds[0]));
+
+$('#contact_bar').click(() => selectTab(tabIds[1]));
+
+$('#add_contact_bar').click(() => selectTab(tabIds[2]));
+
+$('#gesture_bar').click(() => selectTab(tabIds[3]));
 
 var count = 0;
 
@@ -99,7 +98,15 @@ $('#dial-button').on('click', function () {
 downX = 0;
 downY = 0;
 
+navDownX = 0;
+
 $('#gesture_area').mousedown(function (e) {
+  downX = e.pageX;
+  downY = e.pageY;
+  $('#gesture_output').val('Mouse Down');
+});
+
+$('#gesture_area_up_down').mousedown(function (e) {
   downX = e.pageX;
   downY = e.pageY;
   $('#gesture_output').val('Mouse Down');
@@ -120,4 +127,55 @@ $('#gesture_area').mouseup(function (e) {
   }
 
   $('#gesture_output').val(output);
+});
+
+$('#gesture_area_up_down').mouseup(function (e) {
+  upX = e.pageX;
+  upY = e.pageY;
+
+  output = '';
+
+  if (upY < downY) {
+    output = 'Swipe Up';
+  } else if (upY > downY) {
+    output = 'Swipe Down';
+  } else if (upY == downY) {
+    output = 'Mouse Up';
+  }
+
+  $('#gesture_output').val(output);
+});
+
+$('#gesture_nav').mousedown(function (e) {
+  navDownX = e.pageX;
+});
+
+$('#gesture_nav').mouseup(function (e) {
+  navUpX = e.pageX;
+
+  output = 0;
+
+  tabs = ['dial_bar', 'contact_bar', 'add_contact_bar', 'gesture_bar'];
+
+  if (navUpX < navDownX) {
+    output = -1;
+    console.log('swipe left');
+  } else if (navUpX > navDownX) {
+    output = 1;
+    console.log('swipe right');
+  } else if (navUpX == navDownX) {
+    output = 0;
+  }
+
+  currentTabIndex += output;
+  console.log('currentTabIndex after swipe = ' + currentTabIndex);
+
+  if (currentTabIndex < 0) {
+    currentTabIndex = 3;
+  } else if (currentTabIndex > 3) {
+    currentTabIndex = 0;
+  }
+
+  selectTab(tabIds[currentTabIndex]);
+
 });
