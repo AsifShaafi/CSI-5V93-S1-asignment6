@@ -2,11 +2,11 @@ $(document).ready(function () {
   $('#content_dialer').show();
   $('#content_list').hide();
   $('#content_add').hide();
-  $('#test_gesture').hide();
+  $('#about_project').hide();
 });
 
 currentTabIndex = 0;
-tabIds = ['dial_bar', 'contact_bar', 'add_contact_bar', 'gesture_bar'];
+tabIds = ['dial_bar', 'contact_bar', 'add_contact_bar', 'about_project_bar'];
 
 function selectTab(buttonId) {
   console.log('selectTab(' + buttonId + ')');
@@ -15,7 +15,7 @@ function selectTab(buttonId) {
   $('#content_dialer').hide();
   $('#content_list').hide();
   $('#content_add').hide();
-  $('#test_gesture').hide();
+  $('#about_project').hide();
 
   if (buttonId == 'dial_bar') {
     $('#content_dialer').show();
@@ -23,8 +23,8 @@ function selectTab(buttonId) {
     $('#content_list').show();
   } else if (buttonId == 'add_contact_bar') {
     $('#content_add').show();
-  } else if (buttonId == 'gesture_bar') {
-    $('#test_gesture').show();
+  } else if (buttonId == 'about_project_bar') {
+    $('#about_project').show();
   }
 
   // change color of clicked button and reset others
@@ -51,7 +51,7 @@ $('#contact_bar').click(() => selectTab(tabIds[1]));
 
 $('#add_contact_bar').click(() => selectTab(tabIds[2]));
 
-$('#gesture_bar').click(() => selectTab(tabIds[3]));
+$('#about_project_bar').click(() => selectTab(tabIds[3]));
 
 var count = 0;
 
@@ -82,5 +82,16 @@ $('#dial-button').on('click', function () {
     alert('Please enter a phone number!');
   } else {
     alert('Calling ' + lastVal + '...');
+  }
+});
+
+// Changing the css link when button is clicked
+$('#low_vision_toggle').on('click', function () {
+  if ($('#low_vision_toggle').text() == 'Low Vision Mode') {
+    $('#low_vision_toggle').text('Normal Mode');
+    $('#css_link').attr('href', 'css/phone-large.css');
+  } else {
+    $('#low_vision_toggle').text('Low Vision Mode');
+    $('#css_link').attr('href', 'css/phone.css');
   }
 });
