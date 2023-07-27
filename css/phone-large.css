@@ -192,14 +192,21 @@ button {
 
 .large_html_div {
   background-color: #515353;
-  color: black;
+  color: rgb(255, 255, 255);
   position: absolute;
   right: 10px;
   padding: 6px;
   border-radius: 10px;
+  cursor: pointer;
+  top: 10px;
 }
 
 .large_html_div a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+#about_project {
+  width: 50%;
+  margin: 0 auto;
 }

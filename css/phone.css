@@ -1,5 +1,5 @@
 body {
-  color: #777;
+  color: #3d3d3d;
   margin: 0;
 }
 
@@ -187,12 +187,19 @@ button {
   background-color: #a6b3b8;
   color: black;
   position: absolute;
+  top: 5px;
   right: 10px;
   padding: 6px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .large_html_div a {
   color: black;
   text-decoration: none;
+}
+
+#about_project {
+  width: 50%;
+  margin: 0 auto;
 }
