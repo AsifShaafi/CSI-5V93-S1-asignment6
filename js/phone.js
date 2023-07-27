@@ -87,11 +87,11 @@ $('#dial-button').on('click', function () {
 
 // Changing the css link when button is clicked
 $('#low_vision_toggle').on('click', function () {
-  if ($('#low_vision_toggle').text() == 'Low Vision Mode') {
-    $('#low_vision_toggle').text('Normal Mode');
+  if ($('#low_vision_toggle_href').text() == 'Low Vision Mode') {
+    $('#low_vision_toggle_href').text('Normal Mode');
     $('#css_link').attr('href', 'css/phone-large.css');
   } else {
-    $('#low_vision_toggle').text('Low Vision Mode');
+    $('#low_vision_toggle_href').text('Low Vision Mode');
     $('#css_link').attr('href', 'css/phone.css');
   }
 });
