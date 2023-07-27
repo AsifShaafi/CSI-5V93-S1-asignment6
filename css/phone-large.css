@@ -1,6 +1,9 @@
 body {
-  color: #777;
+  color: #161616;
   margin: 0;
+  color: #eee;
+  background-color: #161616;
+  font-size: larger;
 }
 
 label {
@@ -16,7 +19,8 @@ label {
   /* vertical-align: bottom; */
   justify-content: center;
   /* align-items: center; */
-  background-color: #eee;
+  background-color: #252525;
+    font-size: larger;
 }
 
 #tab_bar button {
@@ -32,6 +36,7 @@ label {
   display: flex;
   flex-direction: column;
   padding: 2.5em 1em;
+  font-size: larger;
 }
 
 #content_dialer,
@@ -62,7 +67,7 @@ label {
 .content-subhead {
   margin: 50px 0 20px 0;
   font-weight: 300;
-  color: #888;
+  color: #272727;
 }
 
 button {
@@ -96,8 +101,8 @@ button {
 .digit,
 .dig {
   float: left;
-  padding: 10px 30px;
-  font-size: 2rem;
+  padding: 10px 30px;  
+  font-size: 2em;
   cursor: pointer;
   border: 0px solid #e6e6e6;
   background-color: white;
@@ -113,30 +118,32 @@ button {
 
 #output {
   font-family: 'Exo';
-  font-size: 2rem;
+  font-size: 2em;
   height: 60px;
   font-weight: bold;
   color: #1976d2;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .button-success,
 .button-error,
 .button-warning,
 .button-secondary {
+  font-size: larger;
   color: white;
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .button-success {
-  background: rgb(28, 184, 65);
+  background: rgb(4, 53, 16);
   /* this is a green */
   text-align: justify;
 }
 
 .button-error {
-  background: rgb(202, 60, 60);
+  background: rgb(75, 4, 4);
   /* this is a maroon */
   text-align: justify;
 }
@@ -160,7 +167,7 @@ button {
   margin: 5px 5px;
   cursor: pointer;
   text-align: center;
-  background-color: #a7a7a7;
+  background-color: #333333;
   border-radius: 10px;
   color: #ffffff;
 }
@@ -184,7 +191,7 @@ button {
 }
 
 .large_html_div {
-  background-color: #a6b3b8;
+  background-color: #515353;
   color: black;
   position: absolute;
   right: 10px;
@@ -193,6 +200,6 @@ button {
 }
 
 .large_html_div a {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
