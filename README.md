@@ -1,1 +1,1 @@
-This website project created for the Assignment 1.
+This website project created for the Assignment 6.
